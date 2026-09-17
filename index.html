@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fbf7ef" />
+    <meta
+      name="description"
+      content="Combien de farine, d’œufs, de lait et d’eau pour vos crêpes ? Calculez les bonnes quantités pour des crêpes au froment ou des galettes au sarrasin."
+    />
+    <title>Crêpe World · À chacun sa crêpe</title>
+    <link rel="icon" href="assets/crepe.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="calculator.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#calculateur">Aller au calculateur</a>
+    <svg
+      class="icon-library"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <symbol id="icon-flour" viewBox="0 0 48 48">
+        <path d="m15 8 4 4h10l4-4M16 13l-5 25q13 5 26 0l-5-25Z" />
+        <path
+          d="M24 21v12m0-6c-7 0-7-6-7-6 6 0 7 6 7 6Zm0 4c7 0 7-6 7-6-6 0-7 6-7 6Z"
+        />
+      </symbol>
+      <symbol id="icon-egg" viewBox="0 0 48 48">
+        <path d="M37 29c0 8-5 13-13 13S11 37 11 29 18 6 24 6s13 15 13 23Z" />
+        <path d="M17 30q0 5 4 6" />
+      </symbol>
+      <symbol id="icon-milk" viewBox="0 0 48 48">
+        <path
+          d="M17 7h14v8l5 8v18H12V23l5-8ZM17 11h14M17 15h14M12 25h24M12 35h24"
+        />
+        <path d="M24 28v4" />
+      </symbol>
+      <symbol id="icon-water" viewBox="0 0 48 48">
+        <path d="M37 29c0 8-6 13-13 13s-13-5-13-13S24 6 24 6s13 15 13 23Z" />
+        <path d="M17 30q0 5 5 6" />
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14m-6-6 6 6-6 6" />
+      </symbol>
+      <symbol id="icon-print" viewBox="0 0 24 24">
+        <path d="M7 8V3h10v5M7 17H4V8h16v9h-3M7 14h10v7H7ZM16 11h1" />
+      </symbol>
+    </svg>
+
+    <header class="site-header wrap">
+      <a class="brand" href="./" aria-label="Crêpe World, accueil">
+        <span class="brand-icon" aria-hidden="true">c<span>•</span></span>crêpe<span class="brand-light">.world</span>
+      </a>
+      <span class="header-note">Le bonheur, ça se partage.</span>
+      <a class="header-link" href="#calculateur">À vos crêpes
+        <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Petits calculs. Grandes tablées.</p>
+          <h1 id="hero-title">
+            Des crêpes.<br />Des amis.<br /><em>Les bonnes quantités.</em>
+          </h1>
+          <p class="hero-description">
+            Deux, quatre ou toute la tribu ? Trouvez les bonnes proportions pour
+            régaler tout le monde. Sans vous prendre la crêpe.
+          </p>
+          <a class="hero-link" href="#calculateur"
+            >On prépare la pâte ? <span aria-hidden="true">↘</span></a
+          >
+        </div>
+        <div class="hero-art">
+          <div class="art-orbit" aria-hidden="true"></div>
+          <span class="art-caption"
+            >Le tour du monde<br />commence à la poêle.</span
+          >
+          <img
+            src="assets/crepe.svg"
+            width="560"
+            height="450"
+            alt="Une pile de crêpes dorées, une noix de beurre et quelques fruits rouges dans une assiette."
+          />
+          <div class="art-stamp" aria-label="100 % fait maison">
+            <span>100 %</span>fait maison<svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="m12 3 2 6 6 3-6 2-2 7-2-7-6-2 6-3Z" />
+            </svg>
+          </div>
+          <span class="art-bottom">UN PEU DE FARINE, BEAUCOUP D’AMOUR.</span>
+        </div>
+      </section>
+
+      <section
+        id="calculateur"
+        class="calculator wrap"
+        aria-labelledby="calculator-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / La bonne mesure</p>
+            <h2 id="calculator-title">À combien on se régale ?</h2>
+          </div>
+          <span class="small-note">La recette s’adapte à votre tablée.</span>
+        </div>
+        <noscript
+          ><p class="noscript">
+            Activez JavaScript pour adapter les quantités. La recette affichée
+            convient à 4 personnes, pour environ 12 crêpes au froment.
+          </p></noscript
+        >
+        <div class="calculator-layout">
+          <div class="controls">
+            <fieldset class="recipe-picker">
+              <legend>Plutôt sucré ou salé ?</legend>
+              <label class="recipe-option"
+                ><input type="radio" name="recipe" value="sweet" checked /><span
+                  class="recipe-emoji"
+                  aria-hidden="true"
+                  >☀</span
+                ><span
+                  ><strong>La crêpe sucrée</strong
+                  ><small>Farine de froment</small></span
+                ><span class="radio-mark" aria-hidden="true"></span
+              ></label>
+              <label class="recipe-option"
+                ><input type="radio" name="recipe" value="savory" /><span
+                  class="recipe-emoji savory-symbol"
+                  aria-hidden="true"
+                  >✳</span
+                ><span
+                  ><strong>La galette salée</strong
+                  ><small>Farine de sarrasin</small></span
+                ><span class="radio-mark" aria-hidden="true"></span
+              ></label>
+            </fieldset>
+            <label class="control-label" for="people"
+              >Le nombre de gourmands</label
+            >
+            <div class="stepper">
+              <button
+                id="decrease"
+                type="button"
+                aria-label="Retirer une personne"
+              >
+                −
+              </button>
+              <div class="people-input">
+                <input
+                  id="people"
+                  type="number"
+                  min="1"
+                  max="100"
+                  step="1"
+                  value="4"
+                  inputmode="numeric"
+                  aria-describedby="people-help"
+                /><span id="people-label">personnes</span>
+              </div>
+              <button
+                id="increase"
+                type="button"
+                aria-label="Ajouter une personne"
+              >
+                +
+              </button>
+            </div>
+            <div
+              class="presets"
+              role="group"
+              aria-label="Choisir rapidement le nombre de personnes"
+            >
+              <button type="button" data-people="2" aria-pressed="false">
+                En duo <span>2</span></button
+              ><button type="button" data-people="4" aria-pressed="true">
+                En famille <span>4</span></button
+              ><button type="button" data-people="8" aria-pressed="false">
+                Entre amis <span>8</span>
+              </button>
+            </div>
+            <p id="people-help" class="input-help">
+              De 1 à 100 personnes. Les grandes tablées sont les bienvenues !
+            </p>
+            <p class="serving-note">
+              <span aria-hidden="true">↳</span> On compte
+              <strong id="portion-note">3 crêpes par personne</strong>.<br />À
+              ajuster selon les appétits et les garnitures.
+            </p>
+          </div>
+
+          <div class="results" aria-labelledby="results-title">
+            <div class="results-heading">
+              <div>
+                <span class="eyebrow">Dans votre saladier</span>
+                <h3 id="results-title">Et hop, la pâte est presque prête.</h3>
+              </div>
+              <span class="yield-badge" id="yield">≈ 12 crêpes</span>
+            </div>
+            <div class="ingredient-grid">
+              <div class="ingredient">
+                <svg class="ingredient-icon" aria-hidden="true">
+                  <use href="#icon-flour" />
+                </svg>
+                <p class="quantity">
+                  <span id="flour-amount">250</span> <span class="unit">g</span>
+                </p>
+                <h4 id="flour-name">Farine de froment</h4>
+                <p id="flour-hint">La base de la douceur</p>
+              </div>
+              <div class="ingredient" id="egg-card">
+                <svg class="ingredient-icon" aria-hidden="true">
+                  <use href="#icon-egg" />
+                </svg>
+                <p class="quantity"><span id="egg-amount">3</span></p>
+                <h4 id="egg-name">Œufs</h4>
+                <p id="egg-hint">De préférence moyens</p>
+              </div>
+              <div class="ingredient" id="milk-card">
+                <svg class="ingredient-icon" aria-hidden="true">
+                  <use href="#icon-milk" />
+                </svg>
+                <p class="quantity">
+                  <span id="milk-amount">400</span> <span class="unit">ml</span>
+                </p>
+                <h4>Lait</h4>
+                <p id="milk-hint">Pour le moelleux</p>
+              </div>
+              <div class="ingredient">
+                <svg class="ingredient-icon" aria-hidden="true">
+                  <use href="#icon-water" />
+                </svg>
+                <p class="quantity">
+                  <span id="water-amount">100</span>
+                  <span class="unit">ml</span>
+                </p>
+                <h4>Eau</h4>
+                <p id="water-hint">Pour la légèreté</p>
+              </div>
+            </div>
+            <div class="results-foot">
+              <p id="recipe-note">
+                Ajoutez une pincée de sel et prévoyez un peu de beurre pour la
+                poêle. Le sucre ? À vous de choisir la garniture !
+              </p>
+              <button class="print-button" id="print" type="button">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-print" />
+                </svg>
+                Imprimer
+              </button>
+            </div>
+            <p class="rounding-note" id="rounding-note">
+              Les quantités sont indicatives, selon la taille de votre poêle.
+            </p>
+            <p
+              class="sr-only"
+              id="live-result"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            ></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="method wrap" aria-labelledby="method-title">
+        <div class="method-intro">
+          <p class="eyebrow">02 / Le petit coup de main</p>
+          <h2 id="method-title">C’est vous <br />le chef.</h2>
+          <p>Un saladier, un fouet,<br />et c’est parti.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-number">01</span>
+            <h3>On mélange.</h3>
+            <p id="step-mix">
+              Versez la farine et le sel dans un saladier. Faites un puits,
+              ajoutez les œufs, puis incorporez le lait et l’eau petit à petit
+              en fouettant.
+            </p>
+          </li>
+          <li>
+            <span class="step-number">02</span>
+            <h3>On prend son temps.</h3>
+            <p id="step-rest">
+              Couvrez et laissez reposer la pâte 1 heure au réfrigérateur.
+              Mélangez à nouveau et ajoutez un trait d’eau si elle est trop
+              épaisse.
+            </p>
+            <span class="time-label" id="rest-time">Repos : 1 heure</span>
+          </li>
+          <li>
+            <span class="step-number">03</span>
+            <h3>Et que ça saute !</h3>
+            <p id="step-cook">
+              Chauffez et beurrez légèrement la poêle. Versez une petite louche,
+              répartissez la pâte et cuisez environ 1 minute par face, jusqu’à
+              ce qu’elle soit dorée.
+            </p>
+          </li>
+        </ol>
+      </section>
+      <aside class="bottom-note wrap">
+        <span aria-hidden="true">✳</span>
+        <p>
+          La première est rarement parfaite.<br /><strong
+            >C’est une excellente excuse pour la goûter.</strong
+          >
+        </p>
+        <span aria-hidden="true">✳</span>
+      </aside>
+    </main>
+
+    <footer class="site-footer wrap">
+      <a class="brand" href="./"
+        >crêpe<span class="brand-light">.world</span></a
+      >
+      <p>Fait pour les tablées heureuses.</p>
+      <p>
+        Inspiré de
+        <a
+          href="https://www.raclette.world/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >raclette.world <span aria-hidden="true">↗</span></a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
